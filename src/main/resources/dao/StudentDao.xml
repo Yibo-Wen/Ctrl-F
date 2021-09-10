@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "--//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrlf.demo.dao.StudentDao">
+    <resultMap id="studentMap" type="com.ctrlf.demo.domain.Student">
+        <result property="name" column="name"/>
+        <result property="email" column="email"/>
+        <result property="grade" column="grade"/>
+        <result property="gpa" column="gpa"/>
+    </resultMap>
+
+    <sql id="columns"> name, email, grade, gpa</sql>
+
+    <select id="getAllStudents" resultMap="studentMap">
+        SELECT
+        <include refid="columns"/>
+        FROM student
+    </select>
+
+    <insert id="addStudent" parameterType="com.ctrlf.demo.domain.Student">
+        INSERT INTO student
+        <include refid="columns"/>
+        values(
+        #{id},
+        #{name},
+        #{email},
+        #{grade},
+        #{gpa}
+        )
+    </insert>
+</mapper>
