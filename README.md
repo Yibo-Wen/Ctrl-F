@@ -1,2 +1,2 @@
-# Ctrl+F-Demo
-A basic backend structure with Spring-Boot and Mybatis
+# Ctrl+F
+Back-end development of Ctrl+F website

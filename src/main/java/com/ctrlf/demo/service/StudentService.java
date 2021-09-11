@@ -13,7 +13,7 @@ import java.util.List;
 **/
 @Service
 public interface StudentService {
-    public ResultVo<List<Student>> getAllStudents();
+    ResultVo<List<Student>> getAllStudents();
 
-    public ResultVo<Boolean> addStudent(StudentDto s);
+    ResultVo<Boolean> addStudent(StudentDto s);
 }

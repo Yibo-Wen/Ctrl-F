@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "--//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrlf.demo.dao.SuggestionDao">
+    <resultMap id="studentMap" type="com.ctrlf.demo.domain.Suggestion">
+        <result property="email" column="email"/>
+        <result property="message" column="message"/>
+        <result property="username" column="username"/>
+        <result property="created" column="created"/>
+    </resultMap>
+
+    <sql id="Base_Column_List"> id, email, message, username, created</sql>
+
+    <insert id="addSuggestion" parameterType="com.ctrlf.demo.domain.Suggestion">
+        INSERT INTO suggestion
+        (<include refid="Base_Column_List"/>)
+        values(
+        #{id},
+        #{email},
+        #{message},
+        #{username},
+        #{created}
+        )
+    </insert>
+</mapper>

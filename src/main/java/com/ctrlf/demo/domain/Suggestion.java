@@ -4,20 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
 * @Author Yibo Wen
-* @Date 9/2/2021 7:28 PM
+* @Date 9/11/2021 1:18 PM
 **/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
-
-    private String name;
+public class Suggestion {
 
     private String email;
 
-    private Integer grade;
+    private String message;
 
-    private Double gpa;
+    private String username;
+
+    private Date created;
 }
